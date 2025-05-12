@@ -13,8 +13,13 @@ import java.util.stream.Collectors;
 public class TaskService {
 
 
+    private final TaskRepository taskRepository;
+
     @Autowired
-    private TaskRepository taskRepository;
+    public TaskService(TaskRepository taskRepository) {
+        this.taskRepository = taskRepository;
+    }
+
     public List<TaskDto> getAllTasks() {
 
         List<TaskEntity> tasks = taskRepository.getAll();
@@ -28,6 +33,7 @@ public class TaskService {
                 .map(this::covertToDto)
                 .collect(Collectors.toList());
     }
+
 
     private TaskDto covertToDto (TaskEntity entity){
 

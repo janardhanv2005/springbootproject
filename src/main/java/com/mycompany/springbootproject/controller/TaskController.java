@@ -16,8 +16,12 @@ import java.util.List;
 public class TaskController {
 
 
+    private final TaskService taskService;
+
     @Autowired
-    private TaskService taskService;
+    public TaskController(TaskService taskService) {
+        this.taskService = taskService;
+    }
 
     @GetMapping("/allTasks")
     public ResponseEntity<List<TaskDto>> getAllTasks(){
@@ -26,7 +30,5 @@ public class TaskController {
 
         return ResponseEntity.ok(taskList);
     }
-
-
 
 }

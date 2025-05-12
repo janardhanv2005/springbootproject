@@ -1,10 +1,7 @@
 package com.mycompany.springbootproject.repository;
 
 import com.mycompany.springbootproject.entity.TaskEntity;
-import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Repository;
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
