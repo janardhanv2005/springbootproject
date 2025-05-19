@@ -22,7 +22,7 @@ public class TaskService {
 
     public List<TaskDto> getAllTasks() {
 
-        List<TaskEntity> tasks = taskRepository.getAll();
+        List<TaskEntity> tasks = taskRepository.findAll();
 
         return mapToTaskDto(tasks);
     }

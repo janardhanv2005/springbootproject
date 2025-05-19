@@ -1,12 +1,12 @@
 package com.mycompany.springbootproject.repository;
 
 import com.mycompany.springbootproject.entity.TaskEntity;
+import com.mycompany.springbootproject.entity.UserAuthEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import java.util.ArrayList;
-import java.util.List;
 
 @Repository
-public interface TaskRepository extends JpaRepository<TaskEntity, Long> {
+public interface UserAuthenticationRepository extends JpaRepository<UserAuthEntity, Long> {
 
+    public UserAuthEntity findByUsername(String username);
 }
